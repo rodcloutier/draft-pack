@@ -1,0 +1,7 @@
+package: github.com/rodcloutier/helm-steer
+import:
+- package: github.com/Azure/draft
+- package: github.com/spf13/cobra
+- package: github.com/Masterminds/semver
+- package: github.com/facebookgo/atomicfile
+- pakcage: github.com/gosuri/uitable

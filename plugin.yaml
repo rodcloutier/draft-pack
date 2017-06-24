@@ -1,0 +1,9 @@
+name: "pack"
+# Version is the version of Draft plus the number of official builds for this
+# plugin
+version: "0.5.0+0"
+usage: "manages packs"
+description: "Help operate multiple charts in a cluster."
+command: "$DRAFT_PLUGIN_DIR/draft-pack"
+hooks:
+  install: "$DRAFT_PLUGIN_DIR/install-binary.sh"
