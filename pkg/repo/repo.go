@@ -41,6 +41,21 @@ func (r *RepoFile) Has(name string) bool {
 	return false
 }
 
+// Remove removes the entry from the list of repositories.
+func (r *RepoFile) Remove(name string) bool {
+	cp := []*Entry{}
+	found := false
+	for _, rf := range r.Repositories {
+		if rf.Name == name {
+			found = true
+			continue
+		}
+		cp = append(cp, rf)
+	}
+	r.Repositories = cp
+	return found
+}
+
 // Update attempts to replace one or more repo entries in a repo file. If an
 // entry with the same name doesn't exist in the repo file it will add it.
 func (r *RepoFile) Update(re ...*Entry) {
