@@ -14,44 +14,44 @@ This is inspired by the Helm charts management commands.
 #### Create a new pack
 
 ```
-$ draft pack create
+$ draft packs create
 ```
 
 #### Package a pack
 ```
-$ draft pack package
+$ draft packs package
 ```
 
 #### List all installed packs
 ```
-$ draft pack list
+$ draft packs list
 ```
 
 ### Repositories
 
 ### Add new repository
 ```
-$ draft pack repo add
+$ draft packs repo add
 ```
 
 ### List repositories
 ```
-$ draft pack repo list
+$ draft packs repo list
 ```
 
 ### Update repositories
 ```
-$ draft pack repo update
+$ draft packs repo update
 ```
 
 ### Remove repository
 ```
-$ draft pack repo remove
+$ draft packs repo remove
 ```
 
 ### Index the a directory containing packaged packs
 ```
-$ draft pack repo index
+$ draft packs repo index
 ```
 
 

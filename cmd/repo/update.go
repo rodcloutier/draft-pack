@@ -24,14 +24,14 @@ import (
 
 	"k8s.io/helm/pkg/getter"
 
-	"github.com/rodcloutier/draft-pack/pkg/draftpath"
-	. "github.com/rodcloutier/draft-pack/pkg/getter"
-	"github.com/rodcloutier/draft-pack/pkg/repo"
+	"github.com/rodcloutier/draft-packs/pkg/draftpath"
+	. "github.com/rodcloutier/draft-packs/pkg/getter"
+	"github.com/rodcloutier/draft-packs/pkg/repo"
 )
 
 const updateDesc = `
 Update gets the latest information about packs from the respective pack repositories.
-Information is cached locally, where it is used by commands like 'draft pack search'.
+Information is cached locally, where it is used by commands like 'draft packs search'.
 `
 
 var (

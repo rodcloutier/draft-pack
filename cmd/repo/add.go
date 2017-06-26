@@ -23,9 +23,9 @@ import (
 
 	"k8s.io/helm/pkg/getter"
 
-	"github.com/rodcloutier/draft-pack/pkg/draftpath"
-	. "github.com/rodcloutier/draft-pack/pkg/getter"
-	"github.com/rodcloutier/draft-pack/pkg/repo"
+	"github.com/rodcloutier/draft-packs/pkg/draftpath"
+	. "github.com/rodcloutier/draft-packs/pkg/getter"
+	"github.com/rodcloutier/draft-packs/pkg/repo"
 )
 
 type repoAddCmd struct {

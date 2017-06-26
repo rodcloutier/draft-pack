@@ -14,7 +14,7 @@
 
 package main
 
-import "github.com/rodcloutier/draft-pack/cmd"
+import "github.com/rodcloutier/draft-packs/cmd"
 
 func main() {
 	cmd.Execute()

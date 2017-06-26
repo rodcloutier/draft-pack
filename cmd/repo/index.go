@@ -20,7 +20,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/rodcloutier/draft-pack/pkg/repo"
+	"github.com/rodcloutier/draft-packs/pkg/repo"
 )
 
 const repoIndexDesc = `

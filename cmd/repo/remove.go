@@ -21,8 +21,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/rodcloutier/draft-pack/pkg/draftpath"
-	"github.com/rodcloutier/draft-pack/pkg/repo"
+	"github.com/rodcloutier/draft-packs/pkg/draftpath"
+	"github.com/rodcloutier/draft-packs/pkg/repo"
 )
 
 type repoRemoveCmd struct {

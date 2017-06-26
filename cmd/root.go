@@ -20,7 +20,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/rodcloutier/draft-pack/cmd/repo"
+	"github.com/rodcloutier/draft-packs/cmd/repo"
 )
 
 const (
@@ -32,7 +32,7 @@ This command consist of multiple subcommands to interact with packs
 
 It can be used to list, create and package packs.
 Example usage:
-    $ draft pack list
+    $ draft packs list
 `
 
 func homePath() string {
@@ -41,7 +41,7 @@ func homePath() string {
 
 // RootCmd represents the base command when called without any subcommands
 var RootCmd = &cobra.Command{
-	Use:   "draft pack <cmd>",
+	Use:   "draft packs <cmd>",
 	Short: "list, create, package packs",
 	Long:  packDraft,
 }
