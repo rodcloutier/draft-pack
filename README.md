@@ -27,6 +27,12 @@ $ draft packs package
 $ draft packs list
 ```
 
+### Search for available packs from repositories
+```
+$ draft packs search
+```
+
+
 ### Repositories
 
 ### Add new repository
