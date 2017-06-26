@@ -8,7 +8,7 @@ import (
 	"github.com/Azure/draft/pkg/draft/pack"
 )
 
-// PackVersion represents a chart entry in the IndexFile
+// PackVersion represents a pack entry in the IndexFile
 type PackVersion struct {
 	*pack.Metadata
 	URLs    []string  `json:"urls"`
