@@ -15,46 +15,51 @@
 package cmd
 
 import (
+	"errors"
 	"fmt"
-	"io/ioutil"
 	"os"
+	"path/filepath"
+	"strings"
 
 	"github.com/rodcloutier/draft-packs/pkg/draftpath"
 	"github.com/spf13/cobra"
 )
 
-type packListCmd struct {
+type packRemoveCmd struct {
 	home draftpath.Home
 }
 
 func init() {
-	list := &packListCmd{
+
+	remove := &packRemoveCmd{
 		home: draftpath.NewHome(os.ExpandEnv("$DRAFT_HOME")),
 	}
 
 	cmd := &cobra.Command{
-		Use:   "list [flags]",
-		Short: "list packs",
+		Use:   "remove [PACK]",
+		Short: "remove an installed pack",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			return list.run()
+			if len(args) != 1 {
+				return errors.New("Missing expected argument PACK name")
+			}
+			return remove.run(args[0])
 		},
 	}
-
 	RootCmd.AddCommand(cmd)
 }
 
-func (p *packListCmd) run() error {
+func (rc *packRemoveCmd) run(name string) error {
 
-	packHomeDir := p.home.Packs()
-	files, err := ioutil.ReadDir(packHomeDir)
-	if err != nil {
-		return fmt.Errorf("there was an error reading %s: %v", packHomeDir, err)
+	name = strings.Replace(name, "/", "-", -1)
+
+	packPath := filepath.Join(rc.home.Packs(), name)
+	if _, err := os.Stat(packPath); os.IsNotExist(err) {
+		return fmt.Errorf("Failed to find pack %s", name)
 	}
 
-	for _, file := range files {
-		if file.IsDir() {
-			fmt.Println(file.Name())
-		}
+	err := os.RemoveAll(packPath)
+	if err != nil {
+		return fmt.Errorf("There was an error deleting pack %s", packPath)
 	}
 
 	return nil

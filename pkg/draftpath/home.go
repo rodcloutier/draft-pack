@@ -42,8 +42,16 @@ func (h Home) Cache() string {
 	return h.Path("repository", "cache")
 }
 
+func (h Home) Archive() string {
+	return h.Path("repository", "cache", "archive")
+}
+
 // CacheIndex returns the path to an index for the given named repository.
 func (h Home) CacheIndex(name string) string {
 	target := fmt.Sprintf("%s-index.yaml", name)
 	return h.Path("repository", "cache", target)
+}
+
+func (h Home) Packs() string {
+	return h.Path("packs")
 }

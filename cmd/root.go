@@ -24,7 +24,7 @@ import (
 )
 
 const (
-	homeEnvVar = "DRAFT_HOME"
+	homeEnvVar = "$DRAFT_HOME"
 )
 
 var packDraft = `
@@ -47,6 +47,8 @@ var RootCmd = &cobra.Command{
 }
 
 func init() {
+
+	RootCmd.SilenceUsage = true
 	RootCmd.AddCommand(repo.RootCmd)
 }
 
