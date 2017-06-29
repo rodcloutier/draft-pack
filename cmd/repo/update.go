@@ -80,7 +80,7 @@ func (u *repoUpdateCmd) run() error {
 			},
 		}
 
-		r, err := repo.NewPackRepository(cfg, providers)
+		r, err := repo.NewRepository(cfg, providers)
 		if err != nil {
 			return err
 		}

@@ -29,7 +29,7 @@ type Entry struct {
 }
 
 // NewChartRepository constructs PackRepository
-func NewPackRepository(cfg *Entry, getters getter.Providers) (*PackRepository, error) {
+func NewRepository(cfg *Entry, getters getter.Providers) (*PackRepository, error) {
 	u, err := url.Parse(cfg.URL)
 	if err != nil {
 		return nil, fmt.Errorf("invalid chart URL format: %s", cfg.URL)

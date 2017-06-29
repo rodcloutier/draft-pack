@@ -120,7 +120,7 @@ func addRepository(name, url string, home draftpath.Home, certFile, keyFile, caF
 		},
 	}
 
-	r, err := repo.NewPackRepository(&c, providers)
+	r, err := repo.NewRepository(&c, providers)
 	if err != nil {
 		return err
 	}
