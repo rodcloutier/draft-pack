@@ -71,7 +71,7 @@ func init() {
 func (c *packCreateCmd) run() error {
 
 	if c.pack == "" {
-		return errors.New("Must specify pack to start from using --pack")
+		return errors.New("Must specify pack to start from using --starter")
 	}
 
 	// Check that the starter pack exists
